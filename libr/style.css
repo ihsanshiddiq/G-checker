@@ -1,0 +1,140 @@
+.jumbotron1 {
+    padding: 2rem 1rem;
+    background-color: #1d284d;
+}
+.container1 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn{
+    border-radius: 20px;
+    width: 100px;
+    height: 3s0px;
+    margin-left: 140px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+h2{
+    text-align: center;
+    color: #1d284d;
+}
+.ftoLog{
+    margin-left: 30px;
+}
+.nav-item{
+    margin-left: 100px;
+    margin-top: 30px;
+}
+.ftdash{
+    width: 300px;
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+.atas, a.nav-link{
+    background-color: #1d284d;
+    color: white;
+}
+.btn1{
+    background-color: #921b1b;
+    color: white;
+    border-radius: 20px;
+    width: 90px;
+    height: 3s50px;
+    text-decoration: none;
+    border: none;
+}
+.btn2{
+    background-color: #ff9900;
+    color: white;
+    border-radius: 20px;
+    width: 100px;
+    text-decoration: none;
+    border: none;
+    margin-left: 140px;
+}
+a{
+    color: white;
+}
+.list .card{
+    border: 0px solid white;
+}
+.button{
+    background-color: #ff9900;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    width: 100px;
+    margin-left: 1030px;
+}
+.button1{
+    background-color: #ff9900;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    margin-right: 0px;
+}
+#customers {
+    font-family: sans-serif;
+    border-collapse: collapse;
+    width: 85% ;
+    
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    color: black
+  } 
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #ff9900;
+    color: black
+  }
+  .card-group{
+    display: flex;
+    justify-content: center;
+  }
+.button55, a{
+    text-decoration: none;
+    border-radius: 20px;
+    color: white;
+    background-color: #ff9900;
+    border: none;
+}
+.btn10{
+    border-radius: 20px;
+    color: white;
+    background-color: #921b1b;
+    border: none;
+    width: 100px;
+    height: 40px;
+    margin-left: 510px;
+}
+.btn11{
+    border-radius: 20px;
+    color: white;
+    background-color: #ff9900;
+    border: none;
+    width: 100px;
+    height: 40px;
+    margin-left: 120px;
+}
+.btn12{
+    border-radius: 20px;
+    color: white;
+    background-color: #ff9900;
+    border: none;
+    width: 100px;
+    height: 40px;
+    margin-left: 200px;
+    margin-bottom: 20px;
+}
