@@ -13,7 +13,7 @@
     ?>
 
     <!--CSS REFERENCE-->
-    <link rel="stylesheet" href="../lib/style.css">
+    <!-- <link rel="stylesheet" href="../lib/style.css"> -->
     <style>
         body {
             background-color: #1D284B !important;
@@ -31,6 +31,7 @@
 
 <body>
     <section class="container" style="background-color: #1D284B;">
+    
         <div class="container">
             <div class="position-absolute top-50 start-50 translate-middle">
 
@@ -43,9 +44,8 @@
                         ">
                     <img src="../assets/logo.png" alt="">
                     <h2 class="my-3">LOGIN</h2>
-                    <form action="">
-
-                    </form>
+                    <form action="includes/login.inc.php" method="post">
+                    
                     <div class="form-group px-3" style="text-align: left;">
                         <label for="username">Username</label>
                         <input type="text" name="username" class="form-control textinput" id="username" placeholder=""
@@ -57,14 +57,16 @@
                             placeholder="" require>
                     </div>
                     <button type="submit" name="submit" href="" class="btn primary-button"><b>Login</b></button>
+                    </form>
                 </div>
 
             </div>
 
 
         </div>
+   
 
-        </div>
+    </div>
 
     </section>
 

@@ -32,7 +32,7 @@
   ?> -->
 
     <!--CSS REFERENCE-->
-    <link rel="stylesheet" href="../../libr/style.css">
+    <!-- <link rel="stylesheet" href="../../libr/style.css"> -->
 </head>
 
 <body>
