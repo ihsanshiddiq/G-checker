@@ -4,9 +4,9 @@ class Login extends Connection {
     
     protected function getUser($username, $password) {
         
-        $stmt = $this->connect()->prepare('SELECT password FROM akun WHERE email=? ;');
+        $stmt = $this->connect()->prepare('SELECT password FROM akun WHERE email=?;');
 
-        if(!$stmt->execute(array($username, $password))) {
+        if(!$stmt->execute(array($username))) {
             $stmt = null;
             header("location: ../login.php?error=unabletologin");
             exit();

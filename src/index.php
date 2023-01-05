@@ -46,17 +46,17 @@
                     <h2 class="my-3">LOGIN</h2>
                     <form action="includes/login.inc.php" method="post">
                     
-                    <div class="form-group px-3" style="text-align: left;">
-                        <label for="username">Username</label>
-                        <input type="text" name="username" class="form-control textinput" id="username" placeholder=""
-                            require>
-                    </div>
-                    <div class="form-group px-3 py-3">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" name="password" class="form-control textinput" id="password"
-                            placeholder="" require>
-                    </div>
-                    <button type="submit" name="submit" href="" class="btn primary-button"><b>Login</b></button>
+                        <div class="form-group px-3" style="text-align: left;">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" class="form-control textinput" id="username" placeholder=""
+                                require>
+                        </div>
+                        <div class="form-group px-3 py-3">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" name="password" class="form-control textinput" id="password"
+                                placeholder="" require>
+                        </div>
+                        <button type="submit" name="submit" href="" class="btn primary-button"><b>Login</b></button>
                     </form>
                 </div>
 

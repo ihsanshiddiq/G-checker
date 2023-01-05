@@ -23,7 +23,8 @@ if (isset($_POST['submit'])) {
 
  if ($_SESSION["id_role"] == 0){
 
-    header("location: ../index.php?error=none-login=admin");
+    // header("location: ../index.php?error=none-login=admin");
+    header("location: ../dashboard.php");
     
  } else if($_SESSION["id_role"] == 1){
 
