@@ -6,6 +6,9 @@
         private $tanggal_garansi = '';
         private $id_status = 0;
 
+        private $hasil = false;
+		private $message ='';
+
         public function __get($atribute) {
             if (property_exists($this, $atribute)) {
                 return $this->$atribute;
@@ -18,18 +21,18 @@
             }
         }
 
-        public function addBarang(){
+        public function AddBarang(){
             $sql = "INSERT INTO barang (serial_number, jenis_barang, tanggal_keluar, tanggal_garansi, id_status) 
                     values ('$this->serial_number', '$this->jenis_barang', '$this->tanggal_keluar', '$this->tanggal_garansi', '$this->id_status')";
-            $this->result = mysqli_query($this->connection, $sql);
+            $this->hasil = $this->connection->exec($sql);
     
-            if($this->result)
+            if($this->hasil)
                 $this->message ='Data berhasil ditambahkan!';					
             else
                 $this->message ='Data gagal ditambahkan!';	
        }
 
-        public function updateBarang(){
+        public function UpdateBarang(){
             $sql = "UPDATE barang SET 
                     serial_number = '$this->serial_number',
                     jenis_barang = '$this->jenis_barang',
@@ -38,40 +41,64 @@
                     id_status = '$this->id_status',
                     WHERE serial_number = $this->serial_number";
 
-            $this->result = mysqli_query($this->connection, $sql);
+            $this->hasil = $this->connection->exec($sql);
             
-            if($this->result)
+            if($this->hasil)
             $this->message ='Data berhasil diubah!';					
             else
             $this->message ='Data gagal diubah!';	
         }
 
-        public function deleteBarang(){
-            $sql = "DELETE FROM barang WHERE serial_number=$this->serial_number";
-            $this->result = mysqli_query($this->connection, $sql);
+        public function DeleteBarang(){
+            $sql = "DELETE FROM barang WHERE serial_number = '$this->serial_number'";
+            $this->hasil = $this->connection->exec($sql);
             
-            if($this->result)
+            if($this->hasil)
                $this->message ='Data berhasil dihapus!';					
             else
                $this->message ='Data gagal dihapus!';	
         }
 
-        /*public function selectOneBarang(){
-            $sql = "SELECT * FROM barang WHERE serial_number='$this->serial_number'";
-            $resultOne = mysqli_query($this->connection, $sql);	
-            if(mysqli_num_rows($resultOne) == 1){
-                $this->hasil = true;
-                $data = mysqli_fetch_assoc($resultOne);
-                $this->nama = $data['nama'];			
-                $this->kodeBarang = $data['kodeBarang'];
-                $this->namaBarang = $data['namaBarang'];
-                $this->deskripsi = $data['deskripsi'];				
-                $this->jumlahStok = $data['jumlahStok'];	
-                $this->harga = $data['harga'];	
-                $this->fotoBarang = $data['fotoBarang'];	
-    
-            }	
-        }*/
+        public function SelectOneBarang(){
+			$sql = "SELECT b.*, s.id_status FROM barang b, status s WHERE b.id_status = g.id_status AND serial_number = '$this->serial_number'";
+			$result = $this->connection->query($sql);
+
+			$arrResult = Array();
+			if($result->rowCount() == 1){
+				while ($data = $result->fetch(PDO::FETCH_OBJ))
+				{
+					$this->idbuku = $data->idbuku;
+					$this->serial_number = $data->serial_number;
+                    $this->jenis_barang = $data->jenis_barang;
+                    $this->tanggal_keluar = $data->tanggal_keluar;
+                    $this->tanggal_garansi = $data->tanggal_garansi;
+                    $this->id_status = $data->id_status;
+				}
+			}
+		}
+
+        public function SelectAllBarang(){
+			$sql = "SELECT b.*, s.id_status FROM barang b, status s WHERE b.id_status = g.id_status ORDER BY serial_number";
+			$result = $this->connection->query($sql);
+		
+			$arrResult = Array();
+			$i=0;
+			if($result->rowCount() > 0){
+				while($data = $result->fetch(PDO::FETCH_OBJ))
+				{
+					$objBarang = new Buku();
+					$objBarang->idbuku = $data->idbuku;
+					$objBarang->serial_number = $data->serial_number;
+                    $objBarang->jenis_barang = $data->jenis_barang;
+                    $objBarang->tanggal_keluar = $data->tanggal_keluar;
+                    $objBarang->tanggal_garansi = $data->tanggal_garansi;
+                    $objBarang->id_status = $data->id_status;
+					$arrResult[$i] = $objBarang;
+					$i++;
+				}
+			}
+			return $arrResult;
+		}
     }
 
 ?>
