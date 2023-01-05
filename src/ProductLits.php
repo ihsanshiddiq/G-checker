@@ -19,27 +19,11 @@
 
 <body>
   <!--dashboard-->
-  <div class="atas">
-    <div class="container">
-      <div class="row">
-        <ul class="nav justify-content-end">
-          <img src="../../assets/logo.png" class="ftdash">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="dashboard.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="userlist.html">Generate Serial Number</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Product List</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><button type="button" class="btn1">Logout</button></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <nav>
+    <?php
+    require 'navbaruser.php';
+    ?>
+  </nav>
 
   <br><br>
 

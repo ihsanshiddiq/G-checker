@@ -19,27 +19,11 @@
 <body>
   <!--awalan Navbar-->
 
-  <div class="atas">
-    <div class="container">
-      <div class="row">
-        <ul class="nav justify-content-end">
-          <img src="../../assets/logo.png" class="ftdash">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="dashboard.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="userlist.html">Generate Serial Number</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="ProductLits.html">Product List</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><button type="button" class="btn1">Logout</button></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <nav>
+    <?php
+    require 'navbaruser.php';
+    ?>
+  </nav>
   <br><br>
   <div class="container">
     <h1>Generate Serial Number</h1>
@@ -48,45 +32,35 @@
 
   <div class="container">
     <div class="row">
-      <form>
+      <form action="details.php" method="POST">
         <div class="class mb-3 row">
-          <label>Role</label>
+          <label>Paket Produk</label>
           <div class="col-sm-6">
-            <select class="form-select" aria-label="Default select example">
-              <option>--- Pilih Role ---</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select class="form-select" aria-label="Default select example" name="paket" required>
+              <option>--- Pilih Paket Produk ---</option>
+              <option value="1">Silver</option>
+              <option value="2">Gold</option>
+              <option value="3">Platinum</option>
             </select>
           </div>
         </div>
         <div class="class mb-3 row">
-          <label>Role</label>
+          <label>Quantity</label>
           <div class="col-sm-6">
-            <select class="form-select" aria-label="Default select example">
-              <option>--- Pilih Role ---</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
+            <input type="number" id="qty" name="qty" required>
           </div>
         </div>
         <div class="class mb-3 row">
-          <label>Role</label>
+          <label>Tanggal Keluar</label>
           <div class="col-sm-6">
-            <select class="form-select" aria-label="Default select date">
-              <option>--- Pilih Role ---</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
+            <input type="date" id="tanggal" name="tanggal" required>
           </div>
         </div>
       </form>
     </div>
   </div>
   <br><br><br>
-  <button type="submit" class="btn30">Generate</button>
+  <a href="details.php"><button type="submit" class="btn30" action="/details.php">Generate</button></a>
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->

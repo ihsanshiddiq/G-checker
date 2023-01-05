@@ -21,7 +21,7 @@
 <!-- Header -->
   <nav>
     <?php
-    require 'navbar.php';
+    require 'navbaruser.php';
     ?>
   </nav>
   
@@ -38,7 +38,7 @@
           <h6>Last Name</h6>
           <input type="name" class="form-control" id="exampleInputName" aria-describedby="inputName">
           <h6>Email</h6>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
           <h6>Password</h6>
           <input type="password" class="form-control" id="exampleInputPassword1">
           <h6>Confirm Password</h6>

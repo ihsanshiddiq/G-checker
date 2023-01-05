@@ -23,10 +23,10 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Generate.html">Generate Serial Number</a>
+                            <a class="nav-link" href="userList.php">User List</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="ProductLits.html">Product List</a>
+                            <a class="nav-link" href="ProductLits.php">Product List</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><button type="button" class="btn1">Logout</button></a>

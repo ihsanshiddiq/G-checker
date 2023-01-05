@@ -20,7 +20,7 @@
   <!-- Header -->
   <nav>
     <?php
-    require 'navbar.php';
+    require 'navbaradmin.php';
     ?>
   </nav>
 

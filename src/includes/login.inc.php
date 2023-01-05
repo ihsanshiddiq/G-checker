@@ -4,10 +4,10 @@
 if (isset($_POST['submit'])) {
 
 
- require_once('../init.class.php');
+ //require_once('../init.class.php');
  //$objAkun = new Akun();
 
- $username = $_POST['username'];
+ $email = $_POST['email'];
  $password = $_POST['password'];
 
  //Register-Controller class. These classes below, including ORDER has to be like this and cannot be mixed up in the urutan.
@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
  include '../inc.koneksi.php';
  include "../class/login-obj.class.php";
  include "../class/login-contr.php";
- $login = new loginContr($username, $password);
+ $login = new loginContr($email, $password);
 
  $login->loginUser();
 
