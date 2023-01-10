@@ -1,20 +1,25 @@
 <?php
-    class Connection {
+	class Connection {
 
-        public function connect() {
-            try {
-                $username = "root";
-                $password = "";
-                $dbh = new PDO("mysql:host=localhost;dbname=g-checker", "root", "");
-                //$dbh = new PDO('mysql:host=localhost;dbname=ebs-commerce', $username, $password);
-                return $dbh;
-            }  
-            catch (PDOException $e) {
-                echo "<script>alert('could not connect to database apparently." . $e->getMessage() . "');</script>";
-                print "Error: " . $e->getMessage() . "<br/>";
-                die();
-            }
-        }
+	private $host = "mysql:host=localhost;dbname=g-checker";
+	private $struser = "root";
+	private $strpassword = "";
+	public $connection;
 
-    }
+	function __construct() {
+		$this->connect();
+	}
+
+	function connect()
+	{
+		try {
+			$conn = new PDO($this->host, $this->struser, $this->password);
+			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$this->connection = $conn;
+			
+		} catch (PDOException $e) {
+			echo 'Connection failed: ' . $e->getMessage();
+		}
+	}
+}
 ?>
