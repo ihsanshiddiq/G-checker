@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin | G-CHECKER</title>
+  <title>Details | G-CHECKER</title>
 
   <!--CDN-->
   <?php
@@ -26,7 +26,7 @@
   </nav>
   <br><br>
   <div class="container">
-    <h1>Generate Serial Number</h1>
+    <h1>Details</h1>
     <br><br>
   </div>
 
@@ -38,10 +38,8 @@
                 <td>Jenis Produk</td>
                 <td> : </td>
                 <td><div class="col-sm-6">
-                        <input type="text" id="jenisproduk" name="jenisproduk" value="" readonly>
-                        <?php
-                            echo $_POST['paket'];
-                        ?></input>
+                        <input type="text" id="paket" name="paket" readonly><?php echo $_POST['paket']; ?>
+                        </input>
                     </div></td>
             </tr>
             <tr>

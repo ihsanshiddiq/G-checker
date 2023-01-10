@@ -32,11 +32,11 @@
 
   <div class="container">
     <div class="row">
-      <form action="details.php" method="POST">
+      <form method="post" action="details.php">
         <div class="class mb-3 row">
           <label>Paket Produk</label>
           <div class="col-sm-6">
-            <select class="form-select" aria-label="Default select example" name="paket" required>
+            <select class="form-select" aria-label="Default select example" id="paket" name="paket" required>
               <option>--- Pilih Paket Produk ---</option>
               <option value="1">Silver</option>
               <option value="2">Gold</option>

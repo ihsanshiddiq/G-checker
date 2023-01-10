@@ -5,7 +5,7 @@
             try {
                 $username = "root";
                 $password = "";
-                $dbh = new PDO("mysql:host=localhost;dbname=g-checker", $username, $password);
+                $dbh = new PDO("mysql:host=localhost;dbname=g-checker", "root", "");
                 //$dbh = new PDO('mysql:host=localhost;dbname=ebs-commerce', $username, $password);
                 return $dbh;
             }  
