@@ -7,14 +7,27 @@
 	$objStatus->SelectAllStatus();
 
 if(isset($_POST['btnSubmit'])){
+
+	/*if($_POST['jenis_barang'] == "Silver") {
+		$kodejenis = 999;
+	} else if ($_POST['jenis_barang'] == "Gold") {
+		$kodejenis = 000;
+	} else if ($_POST['jenis_barang'] == "Platinum") {
+		$kodejenis = 777;
+	}*/
+
 	$serialnumberdefault = rand(00000001, 99999999);
 	if (!isset($serialnumberdefault)) {
 		$serialnumberdefault = rand(00000001, 99999999);
 	}
+
 	$objBarang->serial_number = $serialnumberdefault;
     $objBarang->jenis_barang = $_POST['jenis_barang'];	
     $objBarang->tanggal_keluar = $_POST['tanggal_keluar'];
-	$objBarang->tanggal_garansi = $_POST['tanggal_garansi'];
+
+	$selectdate = $_POST['tanggal_keluar'];
+	$objBarang->tanggal_garansi = date('Y-m-d', strtotime($selectdate . ' + 6 months'));
+	//$objBarang->tanggal_garansi = $_POST['tanggal_garansi'];
 
 	$statusdefault = 1;
 	$objBarang->id_status = $statusdefault;
@@ -45,40 +58,41 @@ else if(isset($_GET['serial_number'])){
 </head>
 <div class="container py-5 pb-5">  
 <div class="col-md-6">			
-  <h2 class="pb-5"><span class="text"><strong>Generate Serial Number</strong></span></h4>
+<div class="container">
+    <h1>Generate Serial Number</h1>
+  </div>
+  <br><br>
     <form action="" method="post">
 	<table class="table" border="0">	
     <tr>
 	<td>Jenis Barang</td>
 	<td>:</td>
 	<td>
-	<input type="text" class="form-control" id="jenis_barang" name="jenis_barang" value="">
+	<input type="text" class="form-control" id="jenis_barang" name="jenis_barang" value="" required>
 	</td>
 	</tr>	
 	<tr>
 	<td>Quantity</td>
 	<td>:</td>
 	<td>
-    <input type="number" class="form-control" id="jumlah_produk" name="jumlah_produk" value="">
+    <input type="number" class="form-control" id="jumlah_produk" name="jumlah_produk" value="" required>
 	</td>
 	</tr>	
     <tr>
 	<td>Tanggal Keluar</td>
 	<td>:</td>
 	<td>
-	<input type="date" class="form-control" id="tanggal_keluar" name="tanggal_keluar" value="<?=date("d/m/Y")?>">
+	<input type="date" class="form-control" id="tanggal_keluar" name="tanggal_keluar" value="" required>
 	</td>
 	</tr>
-	<tr>
+	<!--<tr>
 	<td>Tanggal Garansi</td>
 	<td>:</td>
 	<td>
-    <!-- <input type="date" class="form-control" id="tanggal_garansi" name="tanggal_garansi" value="<?php echo $objBarang->tanggal_garansi; ?>"> -->
 	<input type="date" class="form-control" id="tanggal_garansi" name="tanggal_garansi" value="">
 	</td>
-	</tr>		
+	</tr>		-->
 	</table>   
-	    <a href="dashboardadmin.php?p=userlist" class="btn btn-danger">Cancel</a> 
 		<input type="submit" class="btn btn-success" value="Generate" name="btnSubmit">
 </form>	
 </div>  

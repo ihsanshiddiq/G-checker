@@ -35,15 +35,32 @@
         }
         
         public function UpdateBarang(){
-            $sql = "UPDATE barang SET jenis_barang='$this->jenis_barang', tanggal_keluar='$this->tanggal_keluar', tanggal_garansi='$this->tanggal_garansi'
-                    WHERE serial_number = '$this->serial_number'";
+            $sql = "UPDATE barang SET id_status=3 WHERE serial_number = '$this->serial_number'";      
             $this->hasil = $this->connection->exec($sql);
-                
+            
             if($this->hasil)
-                $this->message ='Data berhasil diubah!';								
+                $this->message ='Claim garansi berhasil!';								
             else
-                $this->message ='Data gagal diubah!';								
+                $this->message ='Claim garansi gagal!';						
         }
+
+        /*public function UpdateBarang(){
+            if($this->id_status == 1) {
+                $sql = "UPDATE barang SET id_status=3
+                WHERE serial_number = '$this->serial_number'";      
+                $this->hasil = $this->connection->exec($sql);
+                
+                if($this->hasil)
+                    $this->message ='Claim garansi berhasil!';								
+                else
+                    $this->message ='Claim garansi gagal!';	
+
+            } elseif ($this->id_status == 2){
+                $this->message ='Garansi sudah tidak berlaku.';	
+            } elseif ($this->id_status == 3) {
+                $this->message ='Garansi sudah di claim';	
+            }						
+        }*/
 
         public function DeleteBarang(){
             $sql = "DELETE FROM barang WHERE serial_number=$this->serial_number";

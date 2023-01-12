@@ -65,9 +65,9 @@
                     }
                     //echo '<td class="p-2 mb-2 bg-success text-white">' . $dataBarang->status . '</td>';
                     echo '<td class="text-center">
-                    <a class="btn btn-success btn-sm"  href="dashboardadmin.php?p=deleteproduct&serial_number=' . $dataBarang->serial_number . '" 
+                    <a class="btn btn-success"  href="dashboardadmin.php?p=updatestatus&serial_number=' . $dataBarang->serial_number . '" 
             onclick="return confirm(\'Apakah anda yakin ingin claim garansi?\')">Claim</a>
-                    <a class="btn btn-danger btn-sm"  href="dashboardadmin.php?p=deleteproduct&serial_number=' . $dataBarang->serial_number . '" 
+                    <a class="btn btn-danger"  href="dashboardadmin.php?p=deleteproduct&serial_number=' . $dataBarang->serial_number . '" 
             onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')">Delete</a>
             </td>';
                     echo '</tr>';
