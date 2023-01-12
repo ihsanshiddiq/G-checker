@@ -22,7 +22,7 @@
             <div class="container">
                 <div class="row">
                     <ul class="nav justify-content-end">
-                        <img src="../assets/logo.png" class="ftdash">
+                        <img src="../assets/logo-putih.png" class="ftdash">
                         <li class="nav-item">
                             <a class="nav-link" href="dashboardadmin.php?p=home">Home</a>
                         </li>

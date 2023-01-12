@@ -27,8 +27,12 @@ else if(isset($_SESSION['email'])){
 	$objAkun->SelectOneAkun();
 }	
 ?>
-<div class="container">  
-<h4 class="title"><span class="text"><strong>Profile</strong></span></h4>  
+<div class="container">  <br><br>
+	<div class="container">
+    	<h1>Halo, <?php echo $objAkun->nama; ?>!</h1>
+		<h5>Kamu login sebagai <?php echo $objAkun->role; ?>.</h5>
+  	</div><br><br>
+
     <form action="" method="post" enctype="multipart/form-data">
 	
 	<div class="col-md-5">		
@@ -54,7 +58,7 @@ else if(isset($_SESSION['email'])){
 	</div>
 	
 	</div>
-	<input type="submit" class="btn btn-success" value="Update Profile" name="btnUpdate">	
+	<input type="submit" class="btn btn-success" value="Save" name="btnUpdate">	
 </form>	  
 </div>
 <br>

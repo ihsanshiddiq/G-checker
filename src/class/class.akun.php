@@ -6,6 +6,7 @@
         private $nama='';
         private $password='';
         private $id_role=0;
+        private $role='';
 
         private $hasil= false;
 	    private $message ='';

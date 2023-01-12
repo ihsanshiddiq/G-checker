@@ -5,38 +5,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin | G-CHECKER</title>
-
+  <title>Generate</title>
+ 
   <!--CDN-->
   <?php
   require 'head-conf.html';
   ?>
 
   <!--CSS REFERENCE-->
-  <!-- <link rel="stylesheet" href="../lib/style.css"> -->
+  <link rel="stylesheet" href="../lib/style.css">
 </head>
 
 <body>
-  <!--awalan Navbar-->
-
-  <nav>
-    <?php
-    require 'navbaruser.php';
-    ?>
-  </nav>
   <br><br>
-  <div class="container">
-    <h1>Generate Serial Number</h1>
+    <div class="container">
+      <h1>Generate</h1>
+    </div>
     <br><br>
-  </div>
 
   <div class="container">
     <div class="row">
-      <form method="post" action="details.php">
+      <form method="post" action="">
         <div class="class mb-3 row">
           <label>Paket Produk</label>
           <div class="col-sm-6">
-            <select class="form-select" aria-label="Default select example" id="paket" name="paket" required>
+            <select class="col-sm-6" aria-label="Default select example" id="paket" name="paket" required>
               <option>--- Pilih Paket Produk ---</option>
               <option value="1">Silver</option>
               <option value="2">Gold</option>
@@ -47,20 +40,20 @@
         <div class="class mb-3 row">
           <label>Quantity</label>
           <div class="col-sm-6">
-            <input type="number" id="qty" name="qty" required>
+            <input type="number" class="col-sm-6" id="qty" name="qty" required>
           </div>
         </div>
         <div class="class mb-3 row">
           <label>Tanggal Keluar</label>
           <div class="col-sm-6">
-            <input type="date" id="tanggal" name="tanggal" required>
+            <input type="date" class="col-sm-6" id="tanggal" name="tanggal" required>
           </div>
         </div>
       </form>
     </div>
   </div>
   <br><br><br>
-  <a href="details.php"><button type="submit" class="btn30" action="/details.php">Generate</button></a>
+  <a href="dashboarduser.php?p=product" class="link"><button type="submit" class="btn30" action="">Generate</button></a>
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->

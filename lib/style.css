@@ -171,10 +171,9 @@ h2{
 }
 .ftdash{
     width: 300px;
-    height: 80px;
+    height: 200px;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-right: 20px;
 }
 .atas, a.nav-link{
     background-color: #1d284d;
@@ -255,7 +254,7 @@ a{
     border: none;
     background-color: #ff9900;
     color: white;
-    width: 100px;
+    width: 50px;
     height: 40px;
     margin-left: 1150px;
 }

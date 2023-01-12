@@ -55,7 +55,13 @@
                     echo '<td>' . $dataBarang->jenis_barang . '</td>';
                     echo '<td>' . $dataBarang->tanggal_keluar . '</td>';
                     echo '<td>' . $dataBarang->tanggal_garansi . '</td>';
-                    echo '<td>' . $dataBarang->status . '</td>';
+                    if ($dataBarang->id_status == 1) {
+                      echo '<td class="p-2 mb-2 bg-success text-white">' . $dataBarang->status . '</td>';
+                    } else if ($dataBarang->id_status == 2) {
+                      echo '<td class="p-2 mb-2 bg-danger text-white">' . $dataBarang->status . '</td>';
+                    } else {
+                      echo '<td class="p-2 mb-2 bg-warning text-black">' . $dataBarang->status . '</td>';
+                    }
                     echo '</tr>';
                     $no++;
                 }

@@ -30,18 +30,18 @@
             <div class="container">
                 <div class="row">
                     <ul class="nav justify-content-end">
-                        <img src="../assets/logo.png" class="ftdash">
+                        <img src="../assets/logo-putih.png" class="ftdash">
                         <li class="nav-item">
-                            <a class="nav-link" href="dashboardadmin.php?p=home">Home</a>
+                            <a class="nav-link" href="dashboarduser.php?p=home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="dashboardadmin.php?p=generate">Generate SN</a>
+                            <a class="nav-link" href="dashboarduser.php?p=product">Generate SN</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="dashboardadmin.php?p=productlistuser">Product List</a>
+                            <a class="nav-link" href="dashboarduser.php?p=productlistuser">Product List</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="dashboardadmin.php?p=logout"><button type="button" class="btn1">Logout</button></a>
+                            <a class="nav-link" href="dashboarduser.php?p=logout"><button type="button" class="btn1">Logout</button></a>
                         </li>
                     </ul>
                 </div>

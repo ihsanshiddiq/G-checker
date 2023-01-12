@@ -55,7 +55,7 @@
                     echo '<td>' . $dataAkun->email . '</td>';
                     echo '<td>' . $dataAkun->nama . '</td>';
                     echo '<td>' . $dataAkun->role . '</td>';
-                    echo '<td class="text-center"><a class="btn btn-warning btn-sm"  href="dashboardadmin.php?p=user&email=' . $dataAkun->email . '">Edit</a> |
+                    echo '<td><a class="btn btn-warning btn-sm"  href="dashboardadmin.php?p=user&email=' . $dataAkun->email . '">Edit</a>
                     <a class="btn btn-danger btn-sm"  href="dashboardadmin.php?p=deleteuser&email=' . $dataAkun->email . '" 
             onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')">Delete</a>
             </td>';

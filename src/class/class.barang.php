@@ -1,5 +1,4 @@
 <?php
-    //include './inc.koneksi.php';
     class Barang extends Connection{
 
         private $serial_number=0;
@@ -7,6 +6,7 @@
         private $tanggal_keluar='';
         private $tanggal_garansi='';
         private $id_status=0;
+        private $status='';
 
         private $hasil= false;
 	    private $message ='';
