@@ -31,7 +31,7 @@ h2{
 }
 .ftdash{
     width: 200px;
-    height: 80px;
+    height: 40px;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-right: 20px;
@@ -39,7 +39,6 @@ h2{
 .atas, a.nav-link{
     background-color: #1d284d;
     color: white;
-    margin-bottom: 70px;
 }
 .btn1{
     background-color: #921b1b;
