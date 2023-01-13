@@ -24,7 +24,7 @@
     <h1>Product List</h1>
   </div>
   <br><br>
-
+<br>
   <div class="card-group">
     <table class="table table-bordered" id="customers">
         <thead>
