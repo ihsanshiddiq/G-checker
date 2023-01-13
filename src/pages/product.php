@@ -1,57 +1,73 @@
 <?php 
 	require_once('./class/class.barang.php'); 
-	require_once('./class/class.status.php'); 	
-
+	require_once('./class/class.status.php');     
+	require_once('./pages/print-barang.php');
+	
 	$objBarang = new Barang(); 
 	$objStatus = new Status();
+	$cetak = new Print_barang();
 	$objStatus->SelectAllStatus();
-
+	
 if(isset($_POST['btnSubmit'])){
-
-	/*if($_POST['jenis_barang'] == "Silver") {
-		$kodejenis = 999;
-	} else if ($_POST['jenis_barang'] == "Gold") {
-		$kodejenis = 000;
-	} else if ($_POST['jenis_barang'] == "Platinum") {
-		$kodejenis = 777;
-	}*/
 
 	$serialnumberdefault = rand(00000001, 99999999);
 	if (!isset($serialnumberdefault)) {
-		$serialnumberdefault = rand(00000001, 99999999);
+			$serialnumberdefault = rand(00000001, 99999999);
+		}
+	
+	
+			
+				
+	$jenisBarang = $_POST['jenis_barang'];
+	$tanggal_keluar = $_POST['tanggal_keluar'];
+	$tanggal_garansi = date('Y-m-d', strtotime($tanggal_keluar . ' + 6 months'));
+	$objBarang->jenis_barang = $jenisBarang;	
+	$objBarang->tanggal_keluar = $_POST['tanggal_keluar'];
+	$objBarang->tanggal_garansi = date('Y-m-d', strtotime($tanggal_keluar . ' + 6 months'));
+	// $quantity = $_POST['jumlah_produk'];
+
+	if($jenisBarang == "Silver") {
+		// $prefix = "S-";
+		$sernum = "S-$serialnumberdefault";
+		$objBarang->serial_number = $sernum;
+	} else if ($jenisBarang == "Gold") {
+		$sernum = "G-$serialnumberdefault";
+		$objBarang->serial_number = $sernum;
+		// $prefix = "G-";
+	} else if ($jenisBarang == "Platinum") {
+		$sernum = "P-$serialnumberdefault";
+		$objBarang->serial_number = $sernum;
+		// $prefix = "P-";
 	}
+	
 
-	$objBarang->serial_number = $serialnumberdefault;
-    $objBarang->jenis_barang = $_POST['jenis_barang'];	
-    $objBarang->tanggal_keluar = $_POST['tanggal_keluar'];
-	$quantity = $_POST['jumlah_produk'];
+	
+	
+	
 
-
-	$selectdate = $_POST['tanggal_keluar'];
-	$objBarang->tanggal_garansi = date('Y-m-d', strtotime($selectdate . ' + 6 months'));
 	//$objBarang->tanggal_garansi = $_POST['tanggal_garansi'];
-
+	
 	$statusdefault = 1;
 	$objBarang->id_status = $statusdefault;
-
-	// echo "<script> alert('$objBarang->jenis_barang'); </script>";
-	for ($i=0; $i < $quantity; $i++) { 
-		
-		if(isset($_GET['serial_number'])){		
-			$objBarang->serial_number = $_GET['serial_number'];
-			$objBarang->UpdateBarang();
-		}
-		else{	
-			$objBarang->AddBarang();
-		}			
-	}
-	echo "<script> alert('$objBarang->message'); </script>";
-}
-else if(isset($_GET['serial_number'])){	
-	$objBarang->serial_number = $_GET['serial_number'];	
-	$objBarang->SelectOneBarang();
 	
+	// echo "<script> alert('$objBarang->jenis_barang'); </script>";
+	
+	// $id = IdGenerator::generate(['table' => 'serial_number', 'length' => 7, 'prefix' => date('y')]);
+	
+	// $objBarang->AddBarang();
+	// echo "<script> alert('$objBarang->message'); </script>";
+	
+	$cetak->printOne($sernum, $jenis_barang, $tanggal_keluar, $tanggal_garansi);
 }
+
+// if (isset($_POST['cetak'])) {
+	
+// }
+// else if(isset($_GET['serial_number'])){	
+// 	$objBarang->serial_number = $_GET['serial_number'];	
+// 	$objBarang->SelectOneBarang();
+	
+// }
 ?>
 
 <head>
@@ -85,13 +101,13 @@ else if(isset($_GET['serial_number'])){
 	<!-- <input type="text" class="form-control" id="jenis_barang" name="jenis_barang" value="" required> -->
 	</td>
 	</tr>	
-	<tr>
+	<!-- <tr>
 	<td>Quantity</td>
 	<td>:</td>
 	<td>
     <input type="number" class="form-control" id="jumlah_produk" name="jumlah_produk" value="" required>
 	</td>
-	</tr>	
+	</tr>	 -->
     <tr>
 	<td>Tanggal Keluar</td>
 	<td>:</td>
