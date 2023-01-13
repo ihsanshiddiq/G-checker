@@ -31,9 +31,9 @@ h2{
 }
 .ftdash{
     width: 300px;
-    height: 80px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    height: 100px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     margin-right: 20px;
 }
 .atas, a.nav-link{
