@@ -24,6 +24,8 @@ if(isset($_POST['btnSubmit'])){
 	$objBarang->serial_number = $serialnumberdefault;
     $objBarang->jenis_barang = $_POST['jenis_barang'];	
     $objBarang->tanggal_keluar = $_POST['tanggal_keluar'];
+	$quantity = $_POST['jumlah_produk'];
+
 
 	$selectdate = $_POST['tanggal_keluar'];
 	$objBarang->tanggal_garansi = date('Y-m-d', strtotime($selectdate . ' + 6 months'));
@@ -31,14 +33,18 @@ if(isset($_POST['btnSubmit'])){
 
 	$statusdefault = 1;
 	$objBarang->id_status = $statusdefault;
-	
-	if(isset($_GET['serial_number'])){		
-		$objBarang->serial_number = $_GET['serial_number'];
-		$objBarang->UpdateBarang();
+
+	// echo "<script> alert('$objBarang->jenis_barang'); </script>";
+	for ($i=0; $i < $quantity; $i++) { 
+		
+		if(isset($_GET['serial_number'])){		
+			$objBarang->serial_number = $_GET['serial_number'];
+			$objBarang->UpdateBarang();
+		}
+		else{	
+			$objBarang->AddBarang();
+		}			
 	}
-	else{	
-		$objBarang->AddBarang();
-	}			
 	echo "<script> alert('$objBarang->message'); </script>";
 }
 else if(isset($_GET['serial_number'])){	
@@ -68,7 +74,15 @@ else if(isset($_GET['serial_number'])){
 	<td>Jenis Barang</td>
 	<td>:</td>
 	<td>
-	<input type="text" class="form-control" id="jenis_barang" name="jenis_barang" value="" required>
+	<div class="col-sm-6">
+            <select class="col-sm-6" aria-label="Default select example" id="jenis_barang" name="jenis_barang" required>
+              <option value="" disabled selected>--- Pilih Paket Produk ---</option>
+              <option value="Silver">Silver</option>
+              <option value="Gold">Gold</option>
+              <option value="Platinum">Platinum</option>
+            </select>
+          </div>
+	<!-- <input type="text" class="form-control" id="jenis_barang" name="jenis_barang" value="" required> -->
 	</td>
 	</tr>	
 	<tr>

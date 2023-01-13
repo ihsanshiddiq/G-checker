@@ -2,7 +2,7 @@
     class Barang extends Connection{
 
         private $serial_number=0;
-        private $jenis_barang='';
+        private $jenis_barang;
         private $tanggal_keluar='';
         private $tanggal_garansi='';
         private $id_status=0;
