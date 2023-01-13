@@ -30,9 +30,11 @@ h2{
     margin-top: 30px;
 }
 .ftdash{
-    width: 10px;
+    width: 100%;
     height: 10px;
-
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 20px;
 }
 .atas, a.nav-link{
     background-color: #1d284d;
