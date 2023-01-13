@@ -24,6 +24,7 @@
     <h1>User List</h1>
     <br>
     <a href="dashboardadmin.php?p=user" class="link"><button type="button" class="button1">+ Add User</button></a>
+    <a href="pages/print-user.php" class="link" target="blank"><button type="button" class="button1">Cetak</button></a>
   </div>
   <br><br>
 
