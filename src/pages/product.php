@@ -136,10 +136,6 @@ if(isset($_POST['btnGenerate'])){
 	</tr>
 	</table></form>
 	<input type="submit" class="btn btn-success" value="Cetak PDF" name="btnSubmit">';
-	
-	if (isset($_POST['btnSubmit'])) {
-		$cetak->printOne($sernum, $jenis_barang, $tanggal_keluar, $tanggal_garansi);
-	}
 	//$objBarang->tanggal_garansi = $_POST['tanggal_garansi'];
 	
 	$statusdefault = 1;
@@ -153,6 +149,10 @@ if(isset($_POST['btnGenerate'])){
 	// echo "<script> alert('$objBarang->message'); </script>";
 	
 	//$cetak->printOne($sernum, $jenis_barang, $tanggal_keluar, $tanggal_garansi);
+}
+if (isset($_POST['btnSubmit'])) {
+	$objBarang->AddBarang();
+	$cetak->printOne($sernum, $jenis_barang, $tanggal_keluar, $tanggal_garansi);
 }
 
 // if (isset($_POST['cetak'])) {
