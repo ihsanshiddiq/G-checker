@@ -69,7 +69,7 @@
         }*/
 
         public function DeleteBarang(){
-            $sql = "DELETE FROM barang WHERE serial_number=$this->serial_number";
+            $sql = "DELETE FROM barang WHERE serial_number='$this->serial_number'";
             $this->hasil = $this->connection->exec($sql);
     
             if($this->hasil)
