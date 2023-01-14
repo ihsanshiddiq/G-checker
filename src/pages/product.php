@@ -87,17 +87,22 @@ if(isset($_POST['btnGenerate'])){
 
 	if($jenis_barang == "Silver") {
 		// $prefix = "S-";
-		$sernum = "S-$serialnumberdefault";
+		$sernum = "S-$tanggal_keluar$serialnumberdefault";
 		$objBarang->serial_number = $sernum;
 	} else if ($jenis_barang == "Gold") {
-		$sernum = "G-$serialnumberdefault";
+		$sernum = "S-$tanggal_keluar$serialnumberdefault";
 		$objBarang->serial_number = $sernum;
 		// $prefix = "G-";
 	} else if ($jenis_barang == "Platinum") {
-		$sernum = "P-$serialnumberdefault";
+		$sernum = "S-$tanggal_keluar$serialnumberdefault";
 		$objBarang->serial_number = $sernum;
 		// $prefix = "P-";
 	}
+
+	$statusdefault = 1;
+	$objBarang->id_status = $statusdefault;
+	
+	$objBarang->AddBarang();
 
 	//details
 	echo '
@@ -138,8 +143,7 @@ if(isset($_POST['btnGenerate'])){
 	<input type="submit" class="btn btn-success" value="Cetak PDF" name="btnSubmit">';
 	//$objBarang->tanggal_garansi = $_POST['tanggal_garansi'];
 	
-	$statusdefault = 1;
-	$objBarang->id_status = $statusdefault;
+	
 	
 	// echo "<script> alert('$objBarang->jenis_barang'); </script>";
 	
@@ -151,7 +155,6 @@ if(isset($_POST['btnGenerate'])){
 	//$cetak->printOne($sernum, $jenis_barang, $tanggal_keluar, $tanggal_garansi);
 }
 if (isset($_POST['btnSubmit'])) {
-	$objBarang->AddBarang();
 	$cetak->printOne($sernum, $jenis_barang, $tanggal_keluar, $tanggal_garansi);
 }
 
