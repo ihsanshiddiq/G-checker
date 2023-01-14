@@ -30,7 +30,7 @@
             <div class="container">
                 <div class="row">
                     <ul class="nav justify-content-end">
-                        <img src="../assets/logo-putih.png" class="ftdash">
+                        <img src="../assets/logo-putih.png" class="w-25 h-7">
                         <li class="nav-item">
                             <a class="nav-link" href="dashboarduser.php?p=home">Home</a>
                         </li>
