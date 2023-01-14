@@ -24,18 +24,19 @@ if(isset($_POST['btnSubmit'])){
 	$objBarang->jenis_barang = $jenisBarang;	
 	$objBarang->tanggal_keluar = $_POST['tanggal_keluar'];
 	$objBarang->tanggal_garansi = date('Y-m-d', strtotime($tanggal_keluar . ' + 6 months'));
+	$date = date("Ymd");
 	// $quantity = $_POST['jumlah_produk'];
 
 	if($jenisBarang == "Silver") {
 		// $prefix = "S-";
-		$sernum = "S-$serialnumberdefault";
+		$sernum = "S-$tanggal_keluar$serialnumberdefault";
 		$objBarang->serial_number = $sernum;
 	} else if ($jenisBarang == "Gold") {
-		$sernum = "G-$serialnumberdefault";
+		$sernum = "G-$tanggal_keluar$serialnumberdefault";
 		$objBarang->serial_number = $sernum;
 		// $prefix = "G-";
 	} else if ($jenisBarang == "Platinum") {
-		$sernum = "P-$serialnumberdefault";
+		$sernum = "P-$tanggal_keluar$serialnumberdefault";
 		$objBarang->serial_number = $sernum;
 		// $prefix = "P-";
 	}
@@ -54,10 +55,10 @@ if(isset($_POST['btnSubmit'])){
 	
 	// $id = IdGenerator::generate(['table' => 'serial_number', 'length' => 7, 'prefix' => date('y')]);
 	
-	// $objBarang->AddBarang();
-	// echo "<script> alert('$objBarang->message'); </script>";
+	$objBarang->AddBarang();
+	echo "<script> alert('$objBarang->message'); </script>";
 	
-	$cetak->printOne($sernum, $jenis_barang, $tanggal_keluar, $tanggal_garansi);
+	// $cetak->printOne($sernum, $jenis_barang, $tanggal_keluar, $tanggal_garansi);
 }
 
 // if (isset($_POST['cetak'])) {
