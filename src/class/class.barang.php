@@ -1,12 +1,13 @@
 <?php
     class Barang extends Connection{
-
-        private $serial_number=0;
+        
+        private $serial_number = '';
         private $jenis_barang;
         private $tanggal_keluar='';
         private $tanggal_garansi='';
         private $id_status=0;
         private $status='';
+        
 
         private $hasil= false;
 	    private $message ='';
@@ -24,12 +25,17 @@
         }
     
         public function AddBarang(){
+                 
             $sql = "INSERT INTO barang(serial_number, jenis_barang, tanggal_keluar, tanggal_garansi, id_status)
                     VALUES ('$this->serial_number', '$this->jenis_barang', '$this->tanggal_keluar', '$this->tanggal_garansi', '$this->id_status')";				
             $this->hasil = $this->connection->exec($sql);
                     
-            if($this->hasil)
-                $this->message ='Data berhasil ditambahkan!';					
+            if($this->hasil){
+
+                $this->message ='Data berhasil ditambahkan!';
+                
+                					
+            }
             else
                 $this->message ='Data gagal ditambahkan!';	
         }

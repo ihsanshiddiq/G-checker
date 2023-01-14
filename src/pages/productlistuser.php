@@ -1,3 +1,15 @@
+<?php
+    require_once('./class/class.barang.php');
+    $objBarang = new Barang();
+  if (isset($_POST['Search'])) {
+    $serial_num = $_POST['search'];
+    $objBarang->serial_number = $serial_num;
+    $arrayResult = $objBarang->SelectOneBarang();
+    # code...
+  }
+
+  $arrayResult = $objBarang->SelectAllBarang();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +20,7 @@
   <title>Product List</title>
  
   <!--CDN-->
+  
   <?php
   require './head-conf.html';
   ?>
@@ -22,9 +35,20 @@
 
   <div class="container">
     <h1>Product List</h1>
+    <br><br>
+    <div class="search-container">
+    <form action="#">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</svg></button>
+<a href="pages/print-report-barang.php" class="" target="blank"><button type="" class="btn btn-success">Cetak PDF</button></a>
+    </form>
+  </div>
+  </div>
   </div>
   <br><br>
-<br>
+
   <div class="card-group">
     <table class="table table-bordered" id="customers">
         <thead>
@@ -39,10 +63,6 @@
         </thead>
         <tbody class="">
             <?php
-            require_once('./class/class.barang.php');
-
-            $objBarang = new Barang();
-            $arrayResult = $objBarang->SelectAllBarang();
 
             if (count($arrayResult) == 0) {
                 echo '<tr><td colspan="6">Tidak ada data!</td></tr>';
